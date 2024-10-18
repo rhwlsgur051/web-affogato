@@ -7,8 +7,8 @@ export const HeaderComponent = () => {
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">KoJH</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="home">Profile</Nav.Link>
+        <Nav className="me-auto" activeKey={pathname}>
+          <Nav.Link href="/">Profile</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
