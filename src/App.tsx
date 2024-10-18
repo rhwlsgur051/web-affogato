@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import {
   createBrowserRouter,
@@ -5,24 +6,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { HomePage } from "./pages/home";
-import { useEffect, useState } from "react";
-import { healthCheck } from "./api/axios";
+import { Layout } from "./layouts/layout";
 
 function App() {
-  const [showHeader, setShowHeader] = useState(false);
-  const init = async () => {
-    await healthCheck();
-    setShowHeader(true);
-  };
-
-  useEffect(() => {
-    init();
-  }, []);
-
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <HomePage />,
+      element: <Layout />,
+      children: [{ path: "/", element: <HomePage /> }],
     },
     { path: "*", element: <Navigate to="/" /> },
   ]);
