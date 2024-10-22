@@ -1,6 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { AuthService } from "../api/auth";
 import { useUserStore } from "../stores/user";
+import { UserRequest } from "../types/user";
 
 export const useAuth = () => {
   // stores
@@ -8,7 +9,7 @@ export const useAuth = () => {
 
   // mutations
   const loginMutation = useMutation({
-    mutationFn: (body: { userId: string; userPassword: string }) => {
+    mutationFn: (body: UserRequest) => {
       return AuthService.auth(body);
     },
     onSuccess: (data) => {
