@@ -5,6 +5,8 @@ import { FeedItem } from "../../components/FeedItem";
 
 export const FeedListPage = () => {
   const navigate = useNavigate();
+
+  // custom hooks
   const {
     feedsQuery: { data: feeds },
   } = useFeed();

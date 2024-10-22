@@ -2,9 +2,11 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { FeedService } from "../api/feeds";
 
 export const useFeed = () => {
-  const queryKey = ["feeds"];
   // client
   const queryClient = useQueryClient();
+  
+  // query key
+  const queryKey = ["feeds"];
 
   // queries
   const feedsQuery = useQuery({

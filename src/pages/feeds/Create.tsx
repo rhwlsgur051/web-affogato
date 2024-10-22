@@ -7,7 +7,7 @@ import { toBase64 } from "../../common/util";
 import { useFeed } from "../../hooks/use-feed";
 
 export const FeedCreatePage = () => {
-  // Custom Hooks
+  // custom hooks
   const { createFeedMutation } = useFeed();
 
   const [feedImages, setFeedImages] = useState<string[]>([]);
