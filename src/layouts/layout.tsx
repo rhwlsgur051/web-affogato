@@ -16,7 +16,7 @@ export const Layout = () => {
 
   return (
     <>
-      {!showHeader && (
+      {showHeader && (
         <div id="header">
           <HeaderComponent />
         </div>
