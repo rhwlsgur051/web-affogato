@@ -26,11 +26,14 @@ export const FeedCreatePage = () => {
     mode: "onChange",
   });
 
-  const submit = () => {
+  const submit = async () => {
     if (!feedImages.length) {
       return alert("이미지를 등록해 주세요.");
     }
-    createFeedMutation.mutate({ feedDesc: getValues("feedDesc"), feedImages });
+    createFeedMutation.mutate({
+      feedDesc: getValues("feedDesc"),
+      feedImages,
+    });
   };
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
