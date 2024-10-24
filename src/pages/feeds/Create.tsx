@@ -5,8 +5,10 @@ import { Button, Form, FormControl } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { toBase64 } from "../../common/util";
 import { useFeed } from "../../hooks/use-feed";
+import { useNavigate } from "react-router-dom";
 
 export const FeedCreatePage = () => {
+  const navigate = useNavigate();
   // custom hooks
   const { createFeedMutation } = useFeed();
 
@@ -30,10 +32,11 @@ export const FeedCreatePage = () => {
     if (!feedImages.length) {
       return alert("이미지를 등록해 주세요.");
     }
-    createFeedMutation.mutate({
+    await createFeedMutation.mutateAsync({
       feedDesc: getValues("feedDesc"),
       feedImages,
     });
+    navigate("/feeds");
   };
 
   const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {

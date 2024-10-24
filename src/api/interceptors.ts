@@ -31,7 +31,8 @@ export const onResponseError = async (error: AxiosError) => {
     error.response.status === 401 &&
     error.config?.url !== "/auth"
   ) {
-    if (error.config?.url === "/refresh") {
+    if (error.config?.url === "/auth/refresh") {
+      alert(error.config.data.message);
       logout();
     }
     return await getRefreshToken(error);
