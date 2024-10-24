@@ -20,7 +20,7 @@ export const FeedListPage = () => {
       >
         새 피드
       </Button>
-      <div>
+      <div className="flex flex-col items-center">
         {feeds?.map((feed) => {
           return <FeedItem key={feed.feedNo} feed={feed} />;
         })}

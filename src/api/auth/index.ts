@@ -1,10 +1,9 @@
-import { AuthType } from "../../stores/user";
-import { AuthRequest } from "../../types/auth";
+import { AuthRequest, AuthResponse } from "../../types/auth";
 import HttpClient from "../axios";
 
 const controller = "/auth";
 export const AuthService = {
-  auth: (body: AuthRequest): Promise<AuthType> => {
+  auth: (body: AuthRequest): Promise<AuthResponse> => {
     return HttpClient.post(controller, body);
   },
   refresh: (body: {

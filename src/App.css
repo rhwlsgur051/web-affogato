@@ -1,9 +1,10 @@
-#root {
-  max-width: 1920px;
-  margin: 0 auto;
+body {
+  background-color: rgb(33, 37, 41);
+  color: #ffffff;
 }
 
-#body {
-  width: 100%;
+#root {
+  max-width: 1080px;
+  margin: 0 auto;
   padding: 16px 64px;
 }

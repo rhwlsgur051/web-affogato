@@ -1,19 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-export type AuthType = {
-  accessToken: string;
-  refreshToken: string;
-  userEmail: string;
-  userId: string;
-  userName: string;
-  userNo: number;
-};
-
-type UserStoreType = {
-  user: AuthType | null;
-  setUser: (user: AuthType | null) => void;
-};
+import { UserStoreType } from "../types/user";
 
 export const useUserStore = create(
   persist<UserStoreType>(
