@@ -6,6 +6,7 @@ export type AuthRequest = {
 export type AuthResponse = {
   accessToken: string;
   refreshToken: string;
+  userProfileImage: string;
   userEmail: string;
   userId: string;
   userName: string;
